@@ -1,10 +1,21 @@
 var beginBtn = document.getElementById("beginBtn");
-var hero = document.getElementById("hero");
+var heroElement = document.getElementById("hero");
+var timerElement = document.getElementById("timer");
+timerElement.textContent = 60;
 
 function beginBtnHandler() {
     // document.getElementById("header").style.display = "none";
     document.getElementById("welcome").style.display = "none";
     document.getElementById("beginBtn").style.display = "none";
+
+    var timer = setInterval(function () {
+        timerElement.textContent = timerElement.textContent - 1;
+        if (timerElement.textContent <= 0) {
+            clearInterval(timer);
+        }
+    }, 1000);
+
+
 
     var questionCard = document.createElement("div");
     var questionTitle = document.createElement("h2")
