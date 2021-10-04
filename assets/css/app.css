@@ -1,3 +1,5 @@
+/* https://coolors.co/03045e-023e8a-0077b6-0096c7-00b4d8-48cae4-90e0ef-ade8f4-caf0f8  */
+
 * {
     font-family: 'Noto Sans Display', sans-serif;
 }
@@ -59,4 +61,8 @@
     border: 2px solid #48CAE4;
     
 
+}
+
+.questionOptions {
+    margin: 0 5px;
 }
