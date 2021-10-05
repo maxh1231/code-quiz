@@ -3,6 +3,8 @@ var heroElement = document.getElementById("hero");
 var timerElement = document.getElementById("timer");
 timerElement.textContent = 60;
 
+
+
 function beginBtnHandler() {
     // document.getElementById("header").style.display = "none";
     document.getElementById("welcome").style.display = "none";
@@ -117,7 +119,7 @@ function beginBtnHandler() {
 
         function endQuiz() {
             clearInterval(timer);
-            questionTitle.textContent = "Your score is " + timerElement.textContent;
+            questionTitle.textContent = "Your score is " + questionTitle.textContent;
 
             questionOption1.style.display = "none";
             questionOption2.style.display = "none";
@@ -127,17 +129,32 @@ function beginBtnHandler() {
 
 
 
+            var formInput = document.createElement("form");
             var saveName = document.createElement("input");
             saveName.setAttribute("type", "input");
             saveName.setAttribute("id", "username");
             saveName.setAttribute("placeholder", "Enter your name!");
             saveName.classList.add("name-input");
-            questionCard.appendChild(saveName);
+            formInput.appendChild(saveName);
 
             var submitNameBtn = document.createElement("button");
             submitNameBtn.className = "submit-quiz";
             submitNameBtn.textContent = "Submit";
-            questionCard.appendChild(submitNameBtn);
+            formInput.appendChild(submitNameBtn);
+
+            questionCard.appendChild(formInput);
+
+            submitNameBtn.addEventListener("click", function (event) {
+                event.preventDefault();
+
+
+
+
+
+
+
+
+            })
 
         }
     }
