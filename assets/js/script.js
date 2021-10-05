@@ -87,6 +87,59 @@ function beginBtnHandler() {
 
         questionOption4.textContent = "4";
 
+
+        questionOption1.addEventListener("click", function () {
+            answer.textContent = "Wrong!";
+            timerElement.textContent = timerElement.textContent - 10;
+            endQuiz();
+        })
+
+        questionOption2.addEventListener("click", function () {
+            answer.textContent = "Wrong!";
+            timerElement.textContent = timerElement.textContent - 10;
+            endQuiz();
+        })
+
+        questionOption3.addEventListener("click", function () {
+            answer.textContent = "Wrong!";
+            timerElement.textContent = timerElement.textContent - 10;
+            endQuiz();
+        })
+
+        questionOption4.addEventListener("click", function () {
+            answer.textContent = "Correct!";
+
+            // counteract previous function which deducts 10 seconds on questionOption4 click
+            timerElement.textContent = Number(timerElement.textContent) + 10;
+            endQuiz();
+
+        })
+
+        function endQuiz() {
+            clearInterval(timer);
+            questionTitle.textContent = "Your score is " + timerElement.textContent;
+
+            questionOption1.style.display = "none";
+            questionOption2.style.display = "none";
+            questionOption3.style.display = "none";
+            questionOption4.style.display = "none";
+            answer.style.display = "none";
+
+
+
+            var saveName = document.createElement("input");
+            saveName.setAttribute("type", "input");
+            saveName.setAttribute("id", "username");
+            saveName.setAttribute("placeholder", "Enter your name!");
+            saveName.classList.add("name-input");
+            questionCard.appendChild(saveName);
+
+            var submitNameBtn = document.createElement("button");
+            submitNameBtn.className = "submit-quiz";
+            submitNameBtn.textContent = "Submit";
+            questionCard.appendChild(submitNameBtn);
+
+        }
     }
 
 

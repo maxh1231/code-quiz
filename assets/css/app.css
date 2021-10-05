@@ -44,7 +44,7 @@
     font-size: 1.125rem;
 }
 
-.hero button {
+/* .hero button {
     margin-top: 20px;
     
     font-size: 1.125rem;
@@ -53,9 +53,9 @@
     border: 2px solid #48CAE4;
     border-radius: 10px;
     
-}
+} */
 
-.hero button:hover {
+.questionOptions:hover {
     cursor: pointer;
     background-color: white;
     border: 2px solid #48CAE4;
@@ -65,4 +65,32 @@
 
 .questionOptions {
     margin: 0 5px;
+    margin-top: 20px;
+    
+    font-size: 1.125rem;
+    padding: 10px 35px;
+    background-color: #48CAE4;
+    border: 2px solid #48CAE4;
+    border-radius: 10px;
 }
+
+.name-input {
+    border: 2px solid grey;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+
+.submit-quiz {
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: #48CAE4;
+    border: 2px solid #48CAE4;
+    border-radius: 10px;
+}
+
+.submit-quiz:hover {
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid #48CAE4;
+}
+
