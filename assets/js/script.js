@@ -76,7 +76,7 @@ function beginBtnHandler() {
     })
 
     function question2() {
-        questionTitle.textContent = "2+2";
+        questionTitle.textContent = "2+2?";
 
 
         questionOption1.textContent = "1";
@@ -93,20 +93,20 @@ function beginBtnHandler() {
 
         questionOption1.addEventListener("click", function () {
             answer.textContent = "Wrong!";
-            timerElement.textContent = timerElement.textContent - 10;
-            endQuiz();
+
+            question3();
         })
 
         questionOption2.addEventListener("click", function () {
             answer.textContent = "Wrong!";
             timerElement.textContent = timerElement.textContent - 10;
-            endQuiz();
+            question3();
         })
 
         questionOption3.addEventListener("click", function () {
             answer.textContent = "Wrong!";
-            timerElement.textContent = timerElement.textContent - 10;
-            endQuiz();
+
+            question3();
         })
 
         questionOption4.addEventListener("click", function () {
@@ -114,9 +114,55 @@ function beginBtnHandler() {
 
             // counteract previous function which deducts 10 seconds on questionOption4 click
             timerElement.textContent = Number(timerElement.textContent) + 10;
-            endQuiz();
+            question3();
 
         })
+
+        function question3() {
+            questionTitle.textContent = "3+3?";
+
+            questionOption1.textContent = "3";
+
+
+            questionOption2.textContent = "6";
+
+
+            questionOption3.textContent = "9";
+
+
+            questionOption4.textContent = "12";
+
+
+            questionOption1.addEventListener("click", function () {
+                answer.textContent = "Wrong!";
+                endQuiz();
+
+            })
+
+            questionOption2.addEventListener("click", function () {
+                answer.textContent = "Wrong!";
+                endQuiz();
+
+            })
+
+            questionOption3.addEventListener("click", function () {
+                answer.textContent = "Correct!";
+                // counteract previous function which deducts 10 seconds on questionOption4 click
+                timerElement.textContent = Number(timerElement.textContent) + 10;
+                endQuiz();
+            })
+
+            questionOption4.addEventListener("click", function () {
+                answer.textContent = "Wrong!";
+                timerElement.textContent = timerElement.textContent - 20;
+                endQuiz();
+
+
+            })
+
+
+
+        }
 
         function endQuiz() {
             clearInterval(timer);
