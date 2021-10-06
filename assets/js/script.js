@@ -1,4 +1,5 @@
 var beginBtn = document.getElementById("beginBtn");
+var highScoreBtn = document.getElementById("highScoreBtn");
 var heroElement = document.getElementById("hero");
 var timerElement = document.getElementById("timer");
 timerElement.textContent = 60;
@@ -131,10 +132,11 @@ function beginBtnHandler() {
 
             var formInput = document.createElement("form");
             var saveName = document.createElement("input");
-            saveName.setAttribute("type", "input");
+            saveName.setAttribute("type", "text");
             saveName.setAttribute("id", "username");
             saveName.setAttribute("placeholder", "Enter your name!");
             saveName.classList.add("name-input");
+
             formInput.appendChild(saveName);
 
             var submitNameBtn = document.createElement("button");
@@ -146,14 +148,14 @@ function beginBtnHandler() {
 
             submitNameBtn.addEventListener("click", function (event) {
                 event.preventDefault();
+                inputValue = document.getElementById("username").value;
+                var userHighScore = {
+                    name: inputValue,
+                    score: timerElement.textContent,
+                }
 
-
-
-
-
-
-
-
+                window.localStorage.setItem('user', JSON.stringify(userHighScore));
+                window.location.href = "index.html";
             })
 
         }
@@ -162,8 +164,33 @@ function beginBtnHandler() {
 
 }
 
+function highScoreBtnHandler() {
+    var welcomeText = document.getElementById("welcome");
+    welcomeText.textContent = "Quiz Highscores";
+    welcomeText.style.fontSize = "2rem";
+    welcomeText.style.marginRight = "90px";
 
+    userHighScore = JSON.parse(window.localStorage.getItem('user'));
+
+    var highscoreName = document.createElement("p");
+    highscoreName.textContent = userHighScore.name + ": " + userHighScore.score;
+    highscoreName.style.marginRight = "50px";
+
+    hero.appendChild(highscoreName);
+
+
+
+    beginBtn.style.display = "none";
+
+    highScoreBtn.textContent = "Go Back"
+
+    highScoreBtn.addEventListener("click", function () {
+        window.location.href = "index.html";
+    })
+}
 
 
 
 beginBtn.addEventListener("click", beginBtnHandler);
+
+highScoreBtn.addEventListener("click", highScoreBtnHandler);
