@@ -6,7 +6,7 @@
 * JS
 
 # Description
-* Short quiz timed quiz, deducts 10 seconds off timer when wrong answer is clicked. Stores user's name and their score in the local storage and is referenced on Highscore screen
+* Short timed quiz, deducts 10 seconds off timer when wrong answer is clicked. Stores user's name and their score in the local storage and is referenced on Highscore page.
 
 ## Website
 https://maxh1231.github.io/code-quiz/
